@@ -7,7 +7,7 @@
    This is the assembly that replaces Canvas2D: the renderers (sprite-gpu quads, sky gradient, text)
    are all GPU + pixel-verified; scene2d wires them to the same layout draw-2d! used."
   (:require [kami.sprite-gpu :as sg]  ;; canonical impl now lives in kotoba-lang/webgpu; see README.md
-            [kotoba.text :as txt]
+            [kami.text :as txt]  ;; ditto -- kotoba-lang/text is an unrelated string-utils lib
             [kotoba.sprite2d.layout :as layout]))
 
 (defn- rgba [c] (let [v (vec (or c [1 1 1]))] (if (= 4 (count v)) v (conj v 1.0))))

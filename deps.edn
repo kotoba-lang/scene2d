@@ -1,10 +1,12 @@
 {:paths ["src"]
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
         org.clojure/clojurescript {:mvn/version "1.11.132"}
-        ;; kami.sprite-gpu is canonical (kotoba-lang/webgpu) — see README.md.
+        ;; kami.sprite-gpu AND kami.text (GPU-quad 7-segment glyph renderer) are
+        ;; both canonical in kotoba-lang/webgpu — see README.md. kami.text is
+        ;; unrelated to kotoba-lang/text (a generic string-utils lib, naming
+        ;; collision with the require below).
         io.github.kotoba-lang/webgpu {:local/root "../webgpu"}
-        io.github.kotoba-lang/sprite2d {:local/root "../sprite2d"}
-        io.github.kotoba-lang/text {:local/root "../text"}}
+        io.github.kotoba-lang/sprite2d {:local/root "../sprite2d"}}
  :aliases
  {:test {:extra-paths ["test"]
          :extra-deps {io.github.cognitect-labs/test-runner {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
