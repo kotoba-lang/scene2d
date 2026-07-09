@@ -1,7 +1,8 @@
 {:paths ["src"]
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
         org.clojure/clojurescript {:mvn/version "1.11.132"}
-        io.github.kotoba-lang/sprite-gpu {:local/root "../sprite-gpu"}
+        ;; kami.sprite-gpu is canonical (kotoba-lang/webgpu) — see README.md.
+        io.github.kotoba-lang/webgpu {:local/root "../webgpu"}
         io.github.kotoba-lang/sprite2d {:local/root "../sprite2d"}
         io.github.kotoba-lang/text {:local/root "../text"}}
  :aliases

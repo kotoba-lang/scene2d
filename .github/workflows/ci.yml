@@ -10,11 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: git clone --depth 1 https://github.com/kotoba-lang/sprite-gpu.git ../sprite-gpu
+      # kotoba.scene2d now requires kami.sprite-gpu (kotoba-lang/webgpu) directly instead of the
+      # standalone kotoba-lang/sprite-gpu repo — see README.md.
+      - run: git clone --depth 1 https://github.com/kotoba-lang/webgpu.git ../webgpu
+      - run: git clone --depth 1 https://github.com/kotoba-lang/org-w3-webgpu.git ../org-w3-webgpu
+      - run: git clone --depth 1 https://github.com/kotoba-lang/expr.git ../expr
       - run: git clone --depth 1 https://github.com/kotoba-lang/sprite2d.git ../sprite2d
       - run: git clone --depth 1 https://github.com/kotoba-lang/text.git ../text
-      - run: git clone --depth 1 https://github.com/kotoba-lang/wgsl.git ../wgsl
-      - run: git clone --depth 1 https://github.com/kotoba-lang/expr.git ../expr
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
