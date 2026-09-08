@@ -9,7 +9,7 @@
       ggg
      e   c
       ddd"
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn- rgba [fill] (let [v (vec (or fill [1 1 1]))] (if (= 4 (count v)) v (conj v 1.0))))
 
@@ -45,6 +45,6 @@
   [s [x y] [hw hh] color]
   (let [th  (max 1.0 (* hw 0.30))
         adv (* hw 2.7)]
-    (into [] (mapcat (fn [i ch] (glyph->quads (first (str/upper-case (str ch)))
+    (into [] (mapcat (fn [i ch] (glyph->quads (first (str/upper (str ch)))
                                               [(+ x (* i adv) hw) y] [hw hh] th color))
                      (range) (seq s)))))
