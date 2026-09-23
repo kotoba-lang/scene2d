@@ -1,5 +1,5 @@
 (ns scene2d-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [kotoba.scene2d :as s2]))
 
 (def scene {:render/sky {:zenith [0.1 0.1 0.5] :ground [0.1 0.4 0.1]}
